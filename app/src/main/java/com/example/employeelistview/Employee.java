@@ -70,7 +70,7 @@ public class Employee {
 
     @Override
     public String toString() {
-        return "First name: " + firstName + "\n" + "Last name: " + lastName + "\n" + "Role: " + role
+        return "Name: " + firstName + " " + lastName + "\n" + "Role: " + role
                 + "\n" + "Age: " + age + "\n" + "e-mail: " + email + "\n"
                 + "Mobile number: " + mobileNumber;
     }
