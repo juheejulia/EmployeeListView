@@ -11,14 +11,13 @@ public class Employee {
     private String password;
 
     public Employee(String firstName, String lastName, String role, String age, String email,
-                    String mobileNumber, String password) {
+                    String mobileNumber) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.role = role;
         this.age = age;
         this.email = email;
         this.mobileNumber = mobileNumber;
-        this.password = password;
     }
 
     public String getFirstName() {
@@ -69,19 +68,11 @@ public class Employee {
         this.mobileNumber = mobileNumber;
     }
 
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
     @Override
     public String toString() {
         return "First name: " + firstName + "\n" + "Last name: " + lastName + "\n" + "Role: " + role
                 + "\n" + "Age: " + age + "\n" + "e-mail: " + email + "\n"
-                + "Mobile number: " + mobileNumber + "\n" + "Password: " + password;
+                + "Mobile number: " + mobileNumber;
     }
 }
 
