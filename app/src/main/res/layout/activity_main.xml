@@ -54,6 +54,7 @@
             android:layout_marginTop="70dp"
             android:gravity="center"
             android:text="@string/employee"
+            android:textColor="@color/down_blue_green"
             android:textSize="@dimen/font_medium" />
 
         <!-- first name -->
@@ -143,6 +144,7 @@
             android:layout_marginRight="@dimen/margin_large"
             android:layout_marginTop="@dimen/space_extra_large"
             android:text="@string/text_register"
+            android:textColor="@color/down_blue_green"
             android:textSize="@dimen/font_small"/>
 
         <!-- next button -->
@@ -155,6 +157,7 @@
             android:layout_marginRight="@dimen/margin_large"
             android:layout_marginTop="@dimen/space_medium"
             android:text="@string/text_next"
+            android:textColor="@color/down_blue_green"
             android:textSize="@dimen/font_small"/>
 
     </LinearLayout>

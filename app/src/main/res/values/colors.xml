@@ -3,7 +3,10 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="down_blue_green">#204969</color>
-    <color name="light_pink">#FFF7F7</color>
+    <color name="light_pink">#FADADA</color>
+    <color name="my_light_primary">#8DBFC5</color>
+    <color name="my_light_second_primary">#C5F7FD</color>
+    <color name="my_dark_primary">#5C898E</color>
 
 
 </resources>
