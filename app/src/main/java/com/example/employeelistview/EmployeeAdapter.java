@@ -33,8 +33,8 @@ public class EmployeeAdapter extends ArrayAdapter<Employee> {
         Employee employee = getItem(position);
 
         // Update the ViewObject with data from the list-object
-        TextView tv = view.findViewById(R.id.firstName);
-        tv.setText(employee.getFirstName());
+        //TextView tv = view.findViewById(R.id.firstName);
+        //tv.setText(employee.getFirstName());
 
         return view;
     }
