@@ -136,7 +136,7 @@
             android:textColor="@color/down_blue_green"
             android:textSize="@dimen/font_small"/>
 
-        <!-- next button -->
+        <!-- next button / proceed to EmployeeActivity -->
         <Button
             android:id="@+id/btn_next"
             android:layout_width="match_parent"

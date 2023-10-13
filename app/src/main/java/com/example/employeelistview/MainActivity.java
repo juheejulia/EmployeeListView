@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
@@ -45,46 +46,47 @@ public class MainActivity extends AppCompatActivity {
                 String email = emailInput.getText().toString();
                 String mobileNumber = mobileNumberInput.getText().toString();
 
-                Employee employee = dataManager.registerEmployee
+                // All information field should be filled otherwise it will be refreshed.
+                if (!allFieldsFilled()) {
+                    Toast.makeText(MainActivity.this,
+                            "Please fill in all fields", Toast.LENGTH_SHORT).show();
+                    finish();
+                    startActivity(getIntent());
+                    return;
+                }
+
+                boolean isEmailValid = emailValidator(email);
+                if (!isEmailValid) {
+                    Toast.makeText(MainActivity.this, "E-mail is not valid form.",
+                            Toast.LENGTH_SHORT).show();
+                    finish();
+                    startActivity(getIntent());
+                    return;
+                }
+
+                boolean isFirstNameValid = firstNameValidator(firstName);
+                if(!isFirstNameValid) {
+                    Toast.makeText(MainActivity.this, "First name is not valid form.",
+                            Toast.LENGTH_SHORT).show();
+                    finish();
+                    startActivity(getIntent());
+                    return;
+                }
+                Log.d("debug", "Sparar anställd");
+
+                dataManager.registerEmployee
                         (firstName, lastName, role, age, email, mobileNumber);
-
-                //TODO: Implement that it will not be registered when information is invalid or missing.
-
                 Toast.makeText(MainActivity.this,
                         "An employee is registered.", Toast.LENGTH_SHORT).show();
-/*
-                if(!firstName.isEmpty() && !lastName.isEmpty() && !role.isEmpty()
-                        && age.isEmpty() && email.isEmpty() && mobileNumber.isEmpty()) {
-                    Toast.makeText(MainActivity.this,
-                            "An employee is registered.", Toast.LENGTH_SHORT).show();
-                } else {
-                    Toast.makeText(MainActivity.this,
-                            "Some information is missing.", Toast.LENGTH_SHORT).show();
-                }
-*/
             }
         });
 
+        // It proceeds to Employee List View
         nextButton.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View v) {
-               String firstName = firstNameInput.getText().toString();
-               boolean isFirstNameValid = firstNameValidator(firstName);
-
-               if (!isFirstNameValid) {
-                   Toast.makeText(MainActivity.this, "It is not valid form.",
-                           Toast.LENGTH_SHORT).show();
-               }
-
-               String email = emailInput.getText().toString();
-               boolean isValid = emailValidator(email);
-               if (!isValid) {
-                   Toast.makeText(MainActivity.this, "E-mail is not valid.",
-                           Toast.LENGTH_SHORT).show();
-               } else {
                    Intent intent = new Intent(MainActivity.this, EmployeeActivity.class);
                    startActivity(intent);
-               }
            }
         });
     }
@@ -99,6 +101,7 @@ public class MainActivity extends AppCompatActivity {
         }
         return true;
     }
+
     public static boolean emailValidator(String email) {
         String emailRegex = "^[A-Za-z0-9+_.-]+@(.+)$";
 
@@ -110,5 +113,15 @@ public class MainActivity extends AppCompatActivity {
 
         // Check if the email matches the pattern
         return matcher.matches();
+    }
+
+    private boolean allFieldsFilled() {
+
+        return !firstNameInput.getText().toString().isEmpty() &&
+                !lastNameInput.getText().toString().isEmpty() &&
+                !roleInput.getText().toString().isEmpty() &&
+                !ageInput.getText().toString().isEmpty() &&
+                !emailInput.getText().toString().isEmpty() &&
+                !mobileNumberInput.getText().toString().isEmpty();
     }
 }
