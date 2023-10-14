@@ -4,18 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".EmployeeActivity">
+    tools:context=".EmployeeListActivity">
 
     <!-- list title text -->
     <TextView
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
         android:layout_marginTop="60dp"
+        android:gravity="center"
         android:text="@string/employee_list"
-        android:textSize="@dimen/font_medium"
         android:textColor="@color/down_blue_green"
+        android:textSize="@dimen/font_medium"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -23,17 +23,17 @@
         android:id="@+id/listViewEmployees"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="20dp"
         android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="70dp"
         android:divider="@color/white"
         android:dividerHeight="20dp"
         app:layout_constraintBottom_toTopOf="@+id/guideline"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView"
-        android:layout_marginBottom="50dp"
         app:layout_constraintVertical_bias="0"
-        tools:listitem="@layout/listitem_employee"/>
+        tools:listitem="@layout/listitem_employee" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline"
@@ -46,10 +46,12 @@
         android:id="@+id/btn_back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="112dp"
         android:layout_marginBottom="2dp"
-        android:text="@string/btn_back"
-        android:textSize="@dimen/font_small"
+        android:gravity="center"
+        android:text="@string/btn_register_new_employee"
         android:textColor="@color/down_blue_green"
+        android:textSize="@dimen/font_small"
         app:layout_constraintBottom_toTopOf="@+id/guideline"
         app:layout_constraintStart_toStartOf="@+id/listViewEmployees" />
 

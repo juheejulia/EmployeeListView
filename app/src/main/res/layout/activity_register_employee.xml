@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".RegisterEmployeeActivity">
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineTop"
@@ -145,7 +145,7 @@
             android:layout_marginLeft="@dimen/margin_large"
             android:layout_marginRight="@dimen/margin_large"
             android:layout_marginTop="@dimen/space_medium"
-            android:text="@string/text_next"
+            android:text="@string/text_cancel"
             android:textColor="@color/down_blue_green"
             android:textSize="@dimen/font_small"/>
 

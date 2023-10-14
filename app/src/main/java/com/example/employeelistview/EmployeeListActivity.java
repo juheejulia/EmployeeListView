@@ -5,13 +5,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 
 // This Activity is the page that deploy information of the registered employee.
 
-public class EmployeeActivity extends AppCompatActivity {
+public class EmployeeListActivity extends AppCompatActivity {
 
     ListView listView;
     Button backButton;
@@ -19,7 +18,7 @@ public class EmployeeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_emloyee);
+        setContentView(R.layout.activity_employee_list);
 
         listView = findViewById(R.id.listViewEmployees);
         backButton = findViewById(R.id.btn_back);
@@ -33,7 +32,7 @@ public class EmployeeActivity extends AppCompatActivity {
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(EmployeeActivity.this, MainActivity.class);
+                Intent intent = new Intent(EmployeeListActivity.this, RegisterEmployeeActivity.class);
                 startActivity(intent);
             }
         });

@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
@@ -17,7 +16,7 @@ import java.util.regex.Pattern;
 
 // This Activity is the page to register an employee
 
-public class MainActivity extends AppCompatActivity {
+public class RegisterEmployeeActivity extends AppCompatActivity {
 
     EditText firstNameInput, lastNameInput, roleInput, ageInput, emailInput, mobileNumberInput;
 
@@ -26,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_register_employee);
 
         firstNameInput = findViewById(R.id.firstName);
         lastNameInput = findViewById(R.id.lastName);
@@ -53,21 +52,21 @@ public class MainActivity extends AppCompatActivity {
 
                 // All information field should be filled otherwise it will be refreshed.
                 if (!allFieldsFilled()) {
-                    Toast.makeText(MainActivity.this,
+                    Toast.makeText(RegisterEmployeeActivity.this,
                             "Please fill in all fields", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
                 boolean isEmailValid = emailValidator(email);
                 if (!isEmailValid) {
-                    Toast.makeText(MainActivity.this, "E-mail is not valid form.",
+                    Toast.makeText(RegisterEmployeeActivity.this, "E-mail is not valid form.",
                             Toast.LENGTH_SHORT).show();
                     return;
                 }
 
                 boolean isFirstNameValid = firstNameValidator(firstName);
                 if(!isFirstNameValid) {
-                    Toast.makeText(MainActivity.this, "First name is not valid form.",
+                    Toast.makeText(RegisterEmployeeActivity.this, "First name is not valid form.",
                             Toast.LENGTH_SHORT).show();
                     return;
                 }
@@ -76,8 +75,11 @@ public class MainActivity extends AppCompatActivity {
 
                 dataManager.registerEmployee
                         (firstName, lastName, role, age, email, mobileNumber);
-                Toast.makeText(MainActivity.this,
+                Toast.makeText(RegisterEmployeeActivity.this,
                         "An employee is registered.", Toast.LENGTH_SHORT).show();
+
+                Intent intent = new Intent(RegisterEmployeeActivity.this, EmployeeListActivity.class);
+                startActivity(intent);
             }
         });
 
@@ -85,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
         nextButton.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View v) {
-                   Intent intent = new Intent(MainActivity.this, EmployeeActivity.class);
+                   Intent intent = new Intent(RegisterEmployeeActivity.this, EmployeeListActivity.class);
                    startActivity(intent);
            }
         });
