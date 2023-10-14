@@ -136,9 +136,9 @@
             android:textColor="@color/down_blue_green"
             android:textSize="@dimen/font_small"/>
 
-        <!-- next button / proceed to EmployeeActivity -->
+        <!-- cancel button -->
         <Button
-            android:id="@+id/btn_next"
+            android:id="@+id/btn_cancel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="10dp"

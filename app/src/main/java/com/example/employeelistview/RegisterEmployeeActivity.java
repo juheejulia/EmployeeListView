@@ -34,7 +34,7 @@ public class RegisterEmployeeActivity extends AppCompatActivity {
         emailInput = findViewById(R.id.email);
         mobileNumberInput = findViewById(R.id.mobile_number);
         Button registerButton = findViewById(R.id.btn_register);
-        Button nextButton = findViewById(R.id.btn_next);
+        Button cancelButton = findViewById(R.id.btn_cancel);
 
         registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -84,7 +84,7 @@ public class RegisterEmployeeActivity extends AppCompatActivity {
         });
 
         // It proceeds to Employee List View
-        nextButton.setOnClickListener(new View.OnClickListener() {
+        cancelButton.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View v) {
                    Intent intent = new Intent(RegisterEmployeeActivity.this, EmployeeListActivity.class);

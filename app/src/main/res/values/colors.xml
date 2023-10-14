@@ -7,6 +7,8 @@
     <color name="my_light_primary">#8DBFC5</color>
     <color name="my_light_second_primary">#C5F7FD</color>
     <color name="my_dark_primary">#5C898E</color>
+    <color name="yellow">#FFEB3B</color>
+
 
 
 </resources>
