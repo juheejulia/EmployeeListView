@@ -50,7 +50,6 @@ public class RegisterEmployeeActivity extends AppCompatActivity {
                 InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
                 imm.hideSoftInputFromWindow(registerButton.getWindowToken(),InputMethodManager.RESULT_UNCHANGED_SHOWN);
 
-                // All information field should be filled otherwise it will be refreshed.
                 if (!allFieldsFilled()) {
                     Toast.makeText(RegisterEmployeeActivity.this,
                             "Please fill in all fields", Toast.LENGTH_SHORT).show();
@@ -83,7 +82,6 @@ public class RegisterEmployeeActivity extends AppCompatActivity {
             }
         });
 
-        // It proceeds to Employee List View
         cancelButton.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View v) {
