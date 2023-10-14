@@ -24,9 +24,9 @@ public class EmployeeActivity extends AppCompatActivity {
         listView = findViewById(R.id.listViewEmployees);
         backButton = findViewById(R.id.btn_back);
 
-        ArrayAdapter<Employee> adapter = new ArrayAdapter<>
-                (this, android.R.layout.simple_list_item_1, DataManager.employees);
-        //EmployeeAdapter adapter = new EmployeeAdapter(this, DataManager.employees);
+        //ArrayAdapter<Employee> adapter = new ArrayAdapter<>
+        //(this, android.R.layout.simple_list_item_1, DataManager.employees);
+        EmployeeAdapter adapter = new EmployeeAdapter(this, DataManager.employees);
 
         listView.setAdapter(adapter);
 

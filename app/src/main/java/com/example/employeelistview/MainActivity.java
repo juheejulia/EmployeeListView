@@ -2,11 +2,12 @@ package com.example.employeelistview;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.util.Patterns;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -46,12 +47,14 @@ public class MainActivity extends AppCompatActivity {
                 String email = emailInput.getText().toString();
                 String mobileNumber = mobileNumberInput.getText().toString();
 
+                // Hide keyboard when submitting form
+                InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+                imm.hideSoftInputFromWindow(registerButton.getWindowToken(),InputMethodManager.RESULT_UNCHANGED_SHOWN);
+
                 // All information field should be filled otherwise it will be refreshed.
                 if (!allFieldsFilled()) {
                     Toast.makeText(MainActivity.this,
                             "Please fill in all fields", Toast.LENGTH_SHORT).show();
-                    finish();
-                    startActivity(getIntent());
                     return;
                 }
 
@@ -59,8 +62,6 @@ public class MainActivity extends AppCompatActivity {
                 if (!isEmailValid) {
                     Toast.makeText(MainActivity.this, "E-mail is not valid form.",
                             Toast.LENGTH_SHORT).show();
-                    finish();
-                    startActivity(getIntent());
                     return;
                 }
 
@@ -68,11 +69,10 @@ public class MainActivity extends AppCompatActivity {
                 if(!isFirstNameValid) {
                     Toast.makeText(MainActivity.this, "First name is not valid form.",
                             Toast.LENGTH_SHORT).show();
-                    finish();
-                    startActivity(getIntent());
                     return;
                 }
-                Log.d("debug", "Sparar anställd");
+
+                // Log.d("debug", "Sparar anställd");
 
                 dataManager.registerEmployee
                         (firstName, lastName, role, age, email, mobileNumber);
