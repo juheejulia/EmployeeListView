@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:backgroundTint="@color/light_pink"
-    app:cardCornerRadius="20dp">
+    app:cardCornerRadius="@dimen/_20dp">
 
     <TextView
         android:id="@+id/textViewName"
@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:hint="@string/employee"
         android:textColor="@color/down_blue_green"
-        android:lineSpacingExtra="5dp"
+        android:lineSpacingExtra="@dimen/_5dp"
         android:textSize="@dimen/font_small"
         android:padding="@dimen/margin_small"
         />

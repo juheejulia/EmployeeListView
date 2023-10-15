@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_gravity="center"
     tools:context=".EmployeeListActivity">
 
     <!-- list title text -->
@@ -11,7 +12,7 @@
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="@dimen/_60dp"
         android:gravity="center"
         android:text="@string/employee_list"
         android:textColor="@color/down_blue_green"
@@ -19,15 +20,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <!-- employee list view -->
     <ListView
         android:id="@+id/listViewEmployees"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginHorizontal="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="70dp"
+        android:layout_height="@dimen/_0dp"
+        android:layout_marginHorizontal="@dimen/margin_small"
+        android:layout_marginTop="@dimen/margin_small"
+        android:layout_marginBottom="@dimen/_70dp"
         android:divider="@color/white"
-        android:dividerHeight="20dp"
+        android:dividerHeight="@dimen/margin_small"
         app:layout_constraintBottom_toTopOf="@+id/guideline"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -42,12 +44,13 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.97" />
 
+    <!-- register new button -->
     <Button
         android:id="@+id/btn_register_new"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="112dp"
-        android:layout_marginBottom="2dp"
+        android:layout_marginStart="@dimen/_112dp"
+        android:layout_marginBottom="@dimen/space_small"
         android:gravity="center"
         android:text="@string/btn_register_new_employee"
         android:textColor="@color/down_blue_green"

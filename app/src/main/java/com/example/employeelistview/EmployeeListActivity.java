@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
 
-// This Activity is the page that deploy information of the registered employee.
+// This Activity is the list of employees.
 
 public class EmployeeListActivity extends AppCompatActivity {
 
